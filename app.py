@@ -27,12 +27,10 @@ dias_uteis = st.number_input("Quantos dias úteis funciona por mês?", min_value
 horas_dia = st.number_input("Quantas horas por dia?", min_value=1, step=1)
 salas = st.number_input("Quantas salas de procedimento?", min_value=1, step=1)
 
-# Calculando a base de cálculo
-base_calculo = dias_uteis / horas_dia / salas
 
 # Evitar divisão por zero
-if base_calculo > 0:
-    taxa_sala = total_despesas / base_calculo
+if dias_uteis > 0:
+    taxa_sala = total_despesas /dias_uteis/horas_dia/salas
 
     st.markdown(
         "<h2 style='font-size:48px;'>Taxa Sala: R$ {valor}</h2>".format(
