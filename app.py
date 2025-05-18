@@ -22,7 +22,7 @@ dias_uteis = st.number_input("Quantos dias uteis funciona?")
 horas_dia = st.number_input("Quantas horas por dia?")
 salas = st.number_input("Quantas salas de procedimento?")
 
-base_calculo = dias_uteis/horas_dia/salas
+base_calculo = dias_uteis/horas_dia
 
 taxa_sala = total_despesas/base_calculo
 
