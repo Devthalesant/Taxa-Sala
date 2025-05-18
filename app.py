@@ -12,5 +12,8 @@ demais = st.number_input("Qual o valor total com demais gastos?")
 
 total_despesas  = aluguel + funcionarios + demais
 
-st.write(f"Total de Despeas: R$ {total_despesas:,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.'))
-
+st.markdown(
+    "<h2 style='font-size:48px;'>Total de Despesas: R$ {valor}</h2>".format(
+        valor=f"{total_despesas:,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.')
+    ),
+    unsafe_allow_html=True)
