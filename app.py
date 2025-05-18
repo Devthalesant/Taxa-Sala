@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.title("Imersão 360 Estética - Taxa Sala")
+st.title("Imersão 360- Taxa Sala")
 
 st.subheader("A seguir, faremos algumas perguntas para definir a Taxa Sala da sua clínica.")
 
