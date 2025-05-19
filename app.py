@@ -92,7 +92,7 @@ with col1:
     unsafe_allow_html=True
 )
     st.markdown(
-    "<h3 style='font-size:30px;'>Margem (R$) {}</h3>".format(variaveis_formatadas['ocupacao_pe']),
+    "<h3 style='font-size:30px;'>Margem (R$) {}</h3>".format(ocupacao_pe),
     unsafe_allow_html=True
 )
 with col2:
