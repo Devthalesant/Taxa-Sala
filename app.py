@@ -85,6 +85,8 @@ col1, col2 = st.columns(2)
 
 with col1:
     st.write(num_prced_max)
+    st.write(fat_max)
+    st.write(format_ocupacao_pe)
     st.markdown(
     "<h3 style='font-size:30px;'>Margem(R$) {}</h3>".format(margem_reais_formatada),
     unsafe_allow_html=True
