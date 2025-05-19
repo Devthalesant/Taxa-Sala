@@ -64,7 +64,7 @@ fat_pe = proced_pe*preco_venda
 mod_pe = proced_pe*mod
 ocupacao_pe = (proced_pe*tempo)/(60*salas*horas_dia*dias_uteis)*100
 format_ocupacao_pe = f"{ocupacao_pe:.2f}"
-fat_max = fat_pe/ocupacao_pe
+fat_max = (fat_pe/ocupacao_pe)*100
 num_prced_max = fat_max/preco_venda
 lucro_max = (num_prced_max*(margem_rs+((tempo/60)*taxa_sala)))-total_despesas
 fat_hora = preco_venda/(tempo/60)
@@ -84,9 +84,6 @@ for nome, valor in zip(nomes, variaveis_para_formatar_rs):
 col1, col2 = st.columns(2)
 
 with col1:
-    st.write(num_prced_max)
-    st.write(fat_max)
-    st.write(format_ocupacao_pe)
     st.markdown(
     "<h3 style='font-size:30px;'>Margem(R$) {}</h3>".format(margem_reais_formatada),
     unsafe_allow_html=True
