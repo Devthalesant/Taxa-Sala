@@ -63,6 +63,7 @@ format_proced_pe = f"{proced_pe:.2f}"
 fat_pe = proced_pe*preco_venda
 mod_pe = proced_pe*mod
 ocupacao_pe = (proced_pe*tempo)/(60*salas*horas_dia*dias_uteis)*100
+format_ocupacao_pe = f"{ocupacao_pe:.2f}"
 fat_max = fat_pe/ocupacao_pe
 num_prced_max = fat_max/preco_venda
 lucro_max = (num_prced_max*(margem_rs+(tempo/60*taxa_sala)))-total_despesas
@@ -92,7 +93,7 @@ with col1:
     unsafe_allow_html=True
 )
     st.markdown(
-    "<h3 style='font-size:30px;'>Margem (R$) {}</h3>".format(ocupacao_pe),
+    "<h3 style='font-size:30px;'>MOD (PE) R$ {}</h3>".format(variaveis_formatadas["mod_pe"]),
     unsafe_allow_html=True
 )
 with col2:
@@ -105,5 +106,5 @@ with col2:
     unsafe_allow_html=True
 )
     st.markdown(
-    "<h3 style='font-size:30px;'>Ocupação (PE) % {}</h3>".format(variaveis_formatadas["ocupacao_pe"]),
+    "<h3 style='font-size:30px;'>Ocupação (PE) % {}</h3>".format(format_ocupacao_pe),
     unsafe_allow_html=True)
