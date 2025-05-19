@@ -83,7 +83,8 @@ for nome, valor in zip(nomes, variaveis_para_formatar_rs):
 
 col1, col2 = st.columns(2)
 
-with col1: 
+with col1:
+    st.write(num_prced_max)
     st.markdown(
     "<h3 style='font-size:30px;'>Margem(R$) {}</h3>".format(margem_reais_formatada),
     unsafe_allow_html=True
