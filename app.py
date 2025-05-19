@@ -6,10 +6,12 @@ import streamlit as st
 
 st.subheader("A seguir, faremos algumas perguntas para definir a Taxa Sala da sua clínica.")
 
+st.header("Custos Fixos:")
+
 # Inputs
-aluguel = st.number_input("Qual o valor do seu aluguel?", min_value=0.0, step=0.01)
-funcionarios = st.number_input("Qual o gasto total com funcionarios?", min_value=0.0, step=0.01)
-demais = st.number_input("Qual o valor total com demais gastos?", min_value=0.0, step=0.01)
+aluguel = st.number_input("Qual o valor do seu aluguel? (R$)", min_value=0.0, step=0.01)
+funcionarios = st.number_input("Qual o gasto total com funcionarios? (R$)", min_value=0.0, step=0.01)
+demais = st.number_input("Qual o valor total com demais gastos? (R$)", min_value=0.0, step=0.01)
 
 # Cálculo do total de despesas
 total_despesas = aluguel + funcionarios + demais
@@ -22,6 +24,7 @@ st.markdown(
 )
 st.write("")  # Quebra de linha para separar visualmente
 
+st.header("Informações sobre Funcionamento:")
 # Demais inputs
 dias_uteis = st.number_input("Quantos dias úteis funciona por mês?", min_value=1, step=1)
 horas_dia = st.number_input("Quantas horas por dia?", min_value=1, step=1)
@@ -40,3 +43,14 @@ if dias_uteis > 0:
     )
 else:
     st.write("Por favor, insira valores válidos para dias úteis, horas por dia e salas.")
+
+st.header("Procedimento:")
+
+procedimnto = st.text_input("Qual o nome do Procedimento?")
+preco_venda = st.number_input("Qual o preço de venda? (R$)", min_value=1, step=1)
+tempo = st.number_input("Quanto tempo leva fazendo? (em minutos)", min_value=1, step=1)
+consumivel = st.number_input("Qual o gasto com consumivel? (R$)", min_value=1, step=1)
+aliquota = st.number_input("Qual a aliquota de imposto? (%)", min_value=1, step=1)/100
+cartao = st.number_input("Qual a taxa de cartao de crédito? (%)", min_value=1, step=1)/100
+comissao = st.number_input("Qual comissionamento de venda? (%)", min_value=1, step=1)/100
+mod = st.number_input("Qual valor pago ao profissinal pela execucao? (R$)", min_value=1, step=1)
