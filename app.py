@@ -115,6 +115,6 @@ with col2:
     unsafe_allow_html=True)
 
     st.markdown(
-    "<h3 style='font-size:30px;'>LUCRO (MAX) R$ {}</h3>".format(variaveis_formatadas["lucro_max"]),
+    "<h3 style='font-size:30px;'>LUCRO (Max) R$ {}</h3>".format(variaveis_formatadas["lucro_max"]),
     unsafe_allow_html=True
 )
