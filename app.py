@@ -2,8 +2,6 @@ import streamlit as st
 
 st.title("Imersão 360 - Taxa Sala")
 
-import streamlit as st
-
 st.subheader("A seguir, faremos algumas perguntas para definir a Taxa Sala da sua clínica.")
 
 st.header("Custos Fixos:")
@@ -61,7 +59,7 @@ margem_formatada = f"{margem_porcento:.2f}".replace('.', ',')
 margem_reais_formatada = f"{margem_rs:,.2f}".replace('.', ',')  # coloca vírgula como decimal e separa milhar
 
 proced_pe = total_despesas/(margem_rs+(tempo/60*taxa_sala))
-format_proced_pe = f"{proced_pe:.2f}
+format_proced_pe = f"{proced_pe:.2f}"
 fat_pe = proced_pe*preco_venda
 mod_pe = proced_pe*mod
 ocupacao_pe = (proced_pe*tempo)/(60*salas*horas_dia*dias_uteis)
