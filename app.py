@@ -76,7 +76,7 @@ variaveis_para_formatar_rs = [fat_pe,mod_pe,fat_max,lucro_max,fat_hora,mod_hora,
 variaveis_formatadas = {}
 
 for nome, valor in zip(nomes, variaveis_para_formatar_rs):
-    variavel_formatada = f"{valor:,.2f}".replace('.', ',')
+    variavel_formatada = f"{valor:,.2f}".replace('.', 'X').replace(',', '.').replace('X', ',')
     variaveis_formatadas[nome] = variavel_formatada
 
 
