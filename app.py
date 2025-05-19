@@ -84,7 +84,7 @@ col1, col2 = st.columns(2)
 
 with col1: 
     st.markdown(
-    "<h3 style='font-size:30px;'>Margem em Reais: R$ {}</h3>".format(margem_reais_formatada),
+    "<h3 style='font-size:30px;'>Margem (R$) {}</h3>".format(margem_reais_formatada),
     unsafe_allow_html=True
 )
     st.markdown(
@@ -93,6 +93,6 @@ with col1:
 )
 with col2:
     st.markdown(
-    "<h3 style='font-size:30px;'>Margem em Porcentagem: % {}</h3>".format(margem_formatada),
+    "<h3 style='font-size:30px;'>Margem (%) {}</h3>".format(margem_formatada),
     unsafe_allow_html=True
 )
