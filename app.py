@@ -1,59 +1,46 @@
 import streamlit as st
 
-# Inicializa a página
-if 'page' not in st.session_state:
-    st.session_state['page'] = 1
+st.title("Imersão 360 - Taxa Sala")
 
-def proximo():
-    st.session_state['page'] += 1
+st.subheader("A seguir, faremos algumas perguntas para definir a Taxa Sala da sua clínica.")
 
-# ================== Bloco 1 ==================
-if st.session_state.page == 1:
-    st.title("Imersão 360 - Taxa Sala")
-    st.subheader("A seguir, faremos algumas perguntas para definir a Taxa Sala da sua clínica.")
+st.header("Custos Fixos:")
 
-    st.header("Custos Fixos:")
+# Inputs
+aluguel = st.number_input("Qual o valor do seu aluguel? (R$)", min_value=0.0, step=0.01)
+funcionarios = st.number_input("Qual o gasto total com funcionarios? (R$)", min_value=0.0, step=0.01)
+demais = st.number_input("Qual o valor total com demais gastos? (R$)", min_value=0.0, step=0.01)
 
-    # Inputs
-    aluguel = st.number_input("Qual o valor do seu aluguel? (R$)", min_value=0.0, step=0.01)
-    funcionarios = st.number_input("Qual o gasto total com funcionarios? (R$)", min_value=0.0, step=0.01)
-    demais = st.number_input("Qual o valor total com demais gastos? (R$)", min_value=0.0, step=0.01)
+# Cálculo do total de despesas
+total_despesas = aluguel + funcionarios + demais
 
-    # Cálculo de despesas
-    total_despesas = aluguel + funcionarios + demais
+st.markdown(
+    "<h2 style='font-size:48px;'>Total de Despesas: R$ {valor}</h2>".format(
+        valor=f"{total_despesas:,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.')
+    ),
+    unsafe_allow_html=True
+)
+st.write("")  # Quebra de linha para separar visualmente
+
+st.header("Informações sobre Funcionamento:")
+# Demais inputs
+dias_uteis = st.number_input("Quantos dias úteis funciona por mês?", min_value=1, step=1)
+horas_dia = st.number_input("Quantas horas por dia?", min_value=1, step=1)
+salas = st.number_input("Quantas salas de procedimento?", min_value=1, step=1)
+
+
+# Evitar divisão por zero
+if dias_uteis > 0:
+    taxa_sala = total_despesas /dias_uteis/horas_dia/salas
 
     st.markdown(
-        "<h2 style='font-size:48px;'>Total de Despesas: R$ {valor}</h2>".format(
-            valor=f"{total_despesas:,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.')
+        "<h2 style='font-size:48px;'>Taxa Sala: R$ {valor}</h2>".format(
+            valor=f"{taxa_sala:,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.')
         ),
         unsafe_allow_html=True
     )
-
-    if st.button('Próximo'):
-        proximo()
-
-# ================== Bloco 2 ==================
-elif st.session_state.page == 2:
-    st.header("Informações sobre Funcionamento:")
-
-    dias_uteis = st.number_input("Quantos dias úteis funciona por mês?", min_value=1, step=1)
-    horas_dia = st.number_input("Quantas horas por dia?", min_value=1, step=1)
-    salas = st.number_input("Quantas salas de procedimento?", min_value=1, step=1)
-
-    # Evitar divisão por zero
-    if dias_uteis > 0:
-        taxa_sala = total_despesas / dias_uteis / horas_dia / salas
-        st.markdown(
-            "<h2 style='font-size:48px;'>Taxa Sala: R$ {valor}</h2>".format(
-                valor=f"{taxa_sala:,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.')
-            ),
-            unsafe_allow_html=True
-        )
-    else:
-        st.write("Por favor, insira valores válidos para dias úteis, horas por dia e salas.")
-
-    if st.button('Próximo'):
-        proximo()
+else:
+    st.write("Por favor, insira valores válidos para dias úteis, horas por dia e salas.")
 
 st.header("Procedimento:")
 
