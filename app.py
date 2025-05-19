@@ -102,7 +102,7 @@ with col2:
     unsafe_allow_html=True
 )
     st.markdown(
-    "<h3 style='font-size:30px;'>Faturamento (PE) R$ {}</h3>".format(variaveis_formatadas["fat_pe"]),
+    "<h3 style='font-size:30px;'>FAT (PE) R$ {}</h3>".format(variaveis_formatadas["fat_pe"]),
     unsafe_allow_html=True
 )
     st.markdown(
