@@ -61,4 +61,4 @@ col1, col2 = st.columns(2)
 
 with col1: 
     st.write(f"Margem em Reais: R$ {margem_rs:,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.'))
-    st.write(f"Margem em Porcentagem: % {margem_rs:.2f}")
+    st.write(f"Margem em Porcentagem: % {margem_porcento:.2f}")
