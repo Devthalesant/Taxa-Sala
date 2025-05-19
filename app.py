@@ -7,9 +7,9 @@ st.subheader("A seguir, faremos algumas perguntas para definir a Taxa Sala da su
 st.header("Custos Fixos:")
 
 # Inputs
-aluguel = st.number_input("Qual o valor do seu aluguel? (R$)", min_value=0.0, step=0.01)
-funcionarios = st.number_input("Qual o gasto total com funcionarios? (R$)", min_value=0.0, step=0.01)
-demais = st.number_input("Qual o valor total com demais gastos? (R$)", min_value=0.0, step=0.01)
+aluguel = st.number_input("Qual o valor do seu aluguel? (R$)", min_value=0.1, step=0.01)
+funcionarios = st.number_input("Qual o gasto total com funcionarios? (R$)", min_value=0.1, step=0.01)
+demais = st.number_input("Qual o valor total com demais gastos? (R$)", min_value=0.1, step=0.01)
 
 # Cálculo do total de despesas
 total_despesas = aluguel + funcionarios + demais
