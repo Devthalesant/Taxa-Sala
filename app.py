@@ -61,6 +61,7 @@ margem_formatada = f"{margem_porcento:.2f}".replace('.', ',')
 margem_reais_formatada = f"{margem_rs:,.2f}".replace('.', ',')  # coloca vírgula como decimal e separa milhar
 
 proced_pe = total_despesas/(margem_rs+(tempo/60*taxa_sala))
+format_proced_pe = f"{proced_pe:.2f}
 fat_pe = proced_pe*preco_venda
 mod_pe = proced_pe*mod
 ocupacao_pe = (proced_pe*tempo)/(60*salas*horas_dia*dias_uteis)
@@ -89,7 +90,7 @@ with col1:
     unsafe_allow_html=True
 )
     st.markdown(
-    "<h3 style='font-size:30px;'>Procedimento (PE) {}</h3>".format(proced_pe),
+    "<h3 style='font-size:30px;'>Procedimento (PE) {}</h3>".format(format_proced_pe),
     unsafe_allow_html=True
 )
 with col2:
