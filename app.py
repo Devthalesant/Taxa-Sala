@@ -54,3 +54,10 @@ aliquota = st.number_input("Qual a aliquota de imposto? (%)", min_value=0.01, st
 cartao = st.number_input("Qual a taxa de cartão de crédito? (%)", min_value=0.01, step=0.01) / 100
 comissao = st.number_input("Qual o comissionamento de venda? (%)", min_value=0.01, step=0.01) / 100
 mod = st.number_input("Qual valor pago ao profissinal pela execucao? (R$)", min_value=1, step=1)
+
+margem_rs = preco_venda-(tempo/60*taxa_sala)-consumivel-(aliquota*preco_venda)-(cartao*preco_venda)-(comissao*preco_venda)-mod
+
+col1, col2 = st.columns(2)
+
+with col1: 
+    st.write(f"Margem em Reais: R$ {margem_rs:,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.'))
