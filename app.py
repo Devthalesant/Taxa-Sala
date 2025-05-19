@@ -96,6 +96,11 @@ with col1:
     "<h3 style='font-size:30px;'>MOD (PE) R$ {}</h3>".format(variaveis_formatadas["mod_pe"]),
     unsafe_allow_html=True
 )
+    st.markdown(
+    "<h3 style='font-size:30px;'>FAT (MAX) R$ {}</h3>".format(variaveis_formatadas["fat_max"]),
+    unsafe_allow_html=True
+)
+
 with col2:
     st.markdown(
     "<h3 style='font-size:30px;'>Margem (%) {}</h3>".format(margem_formatada),
@@ -108,3 +113,8 @@ with col2:
     st.markdown(
     "<h3 style='font-size:30px;'>Ocupação (PE) % {}</h3>".format(format_ocupacao_pe),
     unsafe_allow_html=True)
+
+    st.markdown(
+    "<h3 style='font-size:30px;'>LUCRO (MAX) R$ {}</h3>".format(variaveis_formatadas["lucro_max"]),
+    unsafe_allow_html=True
+)
