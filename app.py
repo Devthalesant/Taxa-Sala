@@ -96,3 +96,6 @@ with col2:
     "<h3 style='font-size:30px;'>Margem (%) {}</h3>".format(margem_formatada),
     unsafe_allow_html=True
 )
+    st.markdown(
+    "<h3 style='font-size:30px;'>Margem (R$) {}</h3>".format(variaveis_formatadas["fat_pe"]),
+    unsafe_allow_html=True)
