@@ -89,7 +89,7 @@ with col1:
     unsafe_allow_html=True
 )
     st.markdown(
-    "<h3 style='font-size:30px;'>Procedimento (PE) {}</h3>".format(variaveis_formatadas[proced_pe]),
+    "<h3 style='font-size:30px;'>Procedimento (PE) {}</h3>".format(variaveis_formatadas['fat_pe']),
     unsafe_allow_html=True
 )
 with col2:
