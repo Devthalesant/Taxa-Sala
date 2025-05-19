@@ -58,10 +58,15 @@ mod = st.number_input("Qual valor pago ao profissinal pela execucao? (R$)", min_
 margem_rs = preco_venda-(tempo/60*taxa_sala)-consumivel-(aliquota*preco_venda)-(cartao*preco_venda)-(comissao*preco_venda)-mod
 margem_porcento = (margem_rs/preco_venda)*100
 margem_formatada = f"{margem_porcento:.2f}".replace('.', ',')
+margem_reais_formatada = f"{margem_rs:,.2f}".replace('.', ',')  # coloca vírgula como decimal e separa milhar
+
 col1, col2 = st.columns(2)
 
 with col1: 
-    st.write(f"Margem em Reais: R$ {margem_rs:,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.'))
+    st.markdown(
+    "<h3 style='font-size:30px;'>Margem em Reais: R$ {}</h3>".format(margem_reais_formatadaa),
+    unsafe_allow_html=True
+)
 with col2:
     st.markdown(
     "<h3 style='font-size:30px;'>Margem em Porcentagem: % {}</h3>".format(margem_formatada),
