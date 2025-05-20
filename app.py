@@ -130,7 +130,7 @@ elif st.session_state['page'] == 4:
     margem_porcento = f"{margem_porcento:.2f}".replace('.', ',')
     margem_rs = f"{margem_rs:,.2f}".replace('.', ',')  # coloca vírgula como decimal e separa milhar
     ocupacao_pe = f"{ocupacao_pe:.2f}"
-    proced_pe = f"{proced_pe:.2f}".replace('.', ',')
+    proced_pe = f"{proced_pe:.0f}".replace('.', ',')
     fat_pe = f"{fat_pe:.2f}".replace('.', ',')
     mod_pe = f"{mod_pe:.2f}".replace('.', ',')
     fat_max = f"{fat_max:.2f}".replace('.', ',')
@@ -212,5 +212,13 @@ elif st.session_state['page'] == 4:
             f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
             f"<strong style='font-size:20px; color:#6A1B9A;'>Margem (%)</strong><br>"
             f"<span style='font-size:24px;'>{margem_porcento}</span>"
+            "</div>", unsafe_allow_html=True
+        )
+
+    with col8:
+        st.markdown(
+            f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
+            f"<strong style='font-size:20px; color:#6A1B9A;'>FAT (HORA)</strong><br>"
+            f"<span style='font-size:24px;'>{fat_hora}</span>"
             "</div>", unsafe_allow_html=True
         )
