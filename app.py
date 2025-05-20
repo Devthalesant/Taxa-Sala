@@ -23,7 +23,7 @@ if st.session_state['page'] == 1:
     total_despesas = aluguel + funcionarios + demais
 
     st.markdown(
-        "<h2 style='font-size:30px;'>Total de Despesas: R$ {valor}</h2>".format(
+        "<h2 style='font-size:30px;'>Custo Fixo: R$ {valor}</h2>".format(
             valor=f"{total_despesas:,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.')
 
         ),
