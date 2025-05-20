@@ -10,8 +10,7 @@ def next_page():
 
 # Página 1 - Custos Fixos
 if st.session_state['page'] == 1:
-    st.image("images\Logo-Imersão-horizontal-fundoclaro-png.png", caption="topo", use_column_width=True)
-    st.write(f"PáginaAtual: {st.session_state['page']}")
+    st.image("C:\Users\novo1\OneDrive\Desktop\Dev\taxa sala\images\Logo-Imersão-horizontal-fundoclaro-png.png", caption="topo", use_column_width=True)
     st.title("Imersão 360 - Taxa Sala")
     st.subheader("A seguir, faremos algumas perguntas para definir a Taxa Sala da sua clínica.")
     st.header("Custos Fixos:")
