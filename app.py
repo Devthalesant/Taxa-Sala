@@ -59,13 +59,13 @@ elif st.session_state['page'] == 2:
     else:
         st.write("Por favor, insira valores válidos para dias úteis, horas por dia e salas.")
 
-    if st.button("Salvar Informações de Funcionamento", on_click=next_page):
-        pass
-    
+    if st.button("Salvar Informações de Funcionamento"):
+
         st.session_state['dias_uteis'] = dias_uteis
         st.session_state['horas_dia'] = horas_dia
         st.session_state['salas'] = salas
         st.session_state['taxa_sala'] = taxa_sala
+        next_page()
 
 elif st.session_state['page'] == 3:
     st.title("Imersão 360 - Taxa Sala")
@@ -80,8 +80,7 @@ elif st.session_state['page'] == 3:
     comissao = st.number_input("Qual o comissionamento de venda? (%)", min_value=0.00, step=0.00) / 100
     mod = st.number_input("Qual valor pago ao profissinal pela execucao? (R$)", min_value=0.00, step=1.00)
 
-    if st.button("Salvar Outras Informaçõs e Calcular", on_click=next_page):
-        pass
+    if st.button("Salvar Outras Informaçõs e Calcular"):
     
         st.session_state['procedimnto'] = procedimnto
         st.session_state['preco_venda'] = preco_venda
@@ -91,4 +90,89 @@ elif st.session_state['page'] == 3:
         st.session_state['cartao'] = cartao
         st.session_state['comissao'] = comissao
         st.session_state['mod'] = mod
+        next_page()
 
+elif st.session_state['page'] == 4:
+
+    total_despesas = st.session_state.get('total_despesas', 0)
+    procedimnto = st.session_state.get('procedimnto',0)
+    preco_venda = st.session_state.get('preco_venda',0)
+    tempo = st.session_state.get('tempo',0)
+    consumivel = st.session_state.get('consumivel',0)
+    aliquota = st.session_state.get('aliquota',0)
+    cartao = st.session_state.get('cartao',0)
+    comissao = st.session_state.get('comissao',0)
+    mod = st.session_state.get('mod',0)
+    dias_uteis = st.session_state.get('dias_uteis',0)
+    horas_dia = st.session_state.get('horas_dia',0)
+    salas = st.session_state.get('salas',0)
+    taxa_sala = st.session_state.get('taxa_sala',0)
+
+
+    st.title("Imersão 360 - Taxa Sala")
+    st.header("KPI´s Taxa Sala:")
+    margem_rs = preco_venda-(tempo/60*taxa_sala)-consumivel-(aliquota*preco_venda)-(cartao*preco_venda)-(comissao*preco_venda)-mod
+    margem_porcento = (margem_rs/preco_venda)*100
+    margem_formatada = f"{margem_porcento:.2f}".replace('.', ',')
+    margem_reais_formatada = f"{margem_rs:,.2f}".replace('.', ',')  # coloca vírgula como decimal e separa milhar
+
+    proced_pe = total_despesas/(margem_rs+(tempo/60*taxa_sala))
+    format_proced_pe = f"{proced_pe:.2f}"
+    fat_pe = proced_pe*preco_venda
+    mod_pe = proced_pe*mod
+    ocupacao_pe = (proced_pe*tempo)/(60*salas*horas_dia*dias_uteis)*100
+    format_ocupacao_pe = f"{ocupacao_pe:.2f}"
+    fat_max = (fat_pe/ocupacao_pe)*100
+    num_prced_max = fat_max/preco_venda
+    lucro_max = (num_prced_max*(margem_rs+((tempo/60)*taxa_sala)))-total_despesas
+    fat_hora = preco_venda/(tempo/60)
+    mod_hora = mod/(tempo/60)
+    lucro_hora= (margem_rs+(tempo/60*taxa_sala))/(tempo/60)
+
+    nomes = ['fat_pe', 'mod_pe', 'fat_max', 'lucro_max', 'fat_hora', 'mod_hora', 'lucro_hora']
+    variaveis_para_formatar_rs = [fat_pe,mod_pe,fat_max,lucro_max,fat_hora,mod_hora,lucro_hora]
+
+    variaveis_formatadas = {}
+
+    for nome, valor in zip(nomes, variaveis_para_formatar_rs):
+        variavel_formatada = f"{valor:,.2f}".replace('.', 'X').replace(',', '.').replace('X', ',')
+        variaveis_formatadas[nome] = variavel_formatada
+
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.markdown(
+        "<h3 style='font-size:30px;'>Margem(R$) {}</h3>".format(margem_reais_formatada),
+        unsafe_allow_html=True
+    )
+        st.markdown(
+        "<h3 style='font-size:30px;'>Procedimento(PE) {}</h3>".format(format_proced_pe),
+        unsafe_allow_html=True
+    )
+        st.markdown(
+        "<h3 style='font-size:30px;'>MOD(PE) R$ {}</h3>".format(variaveis_formatadas["mod_pe"]),
+        unsafe_allow_html=True
+    )
+        st.markdown(
+        "<h3 style='font-size:30px;'>FAT(MAX) R$ {}</h3>".format(variaveis_formatadas["fat_max"]),
+        unsafe_allow_html=True
+    )
+
+    with col2:
+        st.markdown(
+        "<h3 style='font-size:30px;'>Margem(%) {}</h3>".format(margem_formatada),
+        unsafe_allow_html=True
+    )
+        st.markdown(
+        "<h3 style='font-size:30px;'>FAT(PE) R$ {}</h3>".format(variaveis_formatadas["fat_pe"]),
+        unsafe_allow_html=True
+    )
+        st.markdown(
+        "<h3 style='font-size:30px;'>Ocupação(PE) % {}</h3>".format(format_ocupacao_pe),
+        unsafe_allow_html=True)
+
+        st.markdown(
+        "<h3 style='font-size:30px;'>Lucro(Max) R$ {}</h3>".format(variaveis_formatadas["lucro_max"]),
+        unsafe_allow_html=True
+    )
