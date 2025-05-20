@@ -11,9 +11,9 @@ def next_page():
 # Página 1 - Custos Fixos
 if st.session_state['page'] == 1:
     st.image("images/Logo-Imersão-horizontal-fundoclaro-png.png",use_container_width=False)
-    st.markdown('<h1 style="font-size:30px;">Taxa Sala</h1>', unsafe_allow_html=True)
+    st.markdown('<h1 style="font-size:30px;color:purple; text-decoration:underline;">Taxa Sala</h1>', unsafe_allow_html=True)
     st.markdown('<h3 style="font-size:20px;">A seguir, faremos algumas perguntas para definir a Taxa Sala da sua clínica.</h3>', unsafe_allow_html=True)
-    st.markdown('<h2 style="font-size:20px;">Custos Fixos:</h2>', unsafe_allow_html=True)
+    st.markdown('<h2 style="font-size:20px;color:purple; text-decoration:underline;">Custos Fixos:</h2>', unsafe_allow_html=True)
 
     # Inputs
     aluguel = st.number_input("Qual o valor do seu aluguel? (R$)", min_value=1, step=1, key='aluguel')
@@ -37,8 +37,8 @@ if st.session_state['page'] == 1:
 # Página 2 - Informações sobre funcionamento
 elif st.session_state['page'] == 2:
     st.image("images/Icone Horizontal.png")
-    st.markdown('<h1 style="font-size:30px;">Taxa Sala</h1>', unsafe_allow_html=True)
-    st.markdown('<h2 style="font-size:20px;">Informações sobre Funcionamento:</h2>', unsafe_allow_html=True)
+    st.markdown('<h1 style="font-size:30px;color:purple; text-decoration:underline;">Taxa Sala</h1>', unsafe_allow_html=True)
+    st.markdown('<h2 style="font-size:20px;color:purple; text-decoration:underline;">Informações sobre Funcionamento:</h2>', unsafe_allow_html=True)
 
     total_despesas = st.session_state.get('total_despesas', 0)
 
