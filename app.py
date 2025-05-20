@@ -35,22 +35,23 @@ if st.button("Salvar Despesas", on_click=next_page):
     st.session_state['aluguel'] = aluguel
     st.session_state['funcionarios'] = funcionarios
     st.session_state['demais'] = demais
-    
+
 # Página 2 - Informações sobre funcionamento
 elif st.session_state['page'] == 2:
     st.title("Imersão 360 - Taxa Sala")
     st.header("Informações sobre Funcionamento:")
 
-    # Recupera o valor de despesas
     total_despesas = st.session_state.get('total_despesas', 0)
-
     dias_uteis = st.number_input("Quantos dias úteis funciona por mês?", min_value=1, step=1)
     horas_dia = st.number_input("Quantas horas por dia?", min_value=1, step=1)
     salas = st.number_input("Quantas salas de procedimento?", min_value=1, step=1)
-    
-    # Evitar divisão por zero
+
+    # Só calcular se todos os valores forem válidos (>0)
     if dias_uteis > 0 and horas_dia > 0 and salas > 0:
         taxa_sala = total_despesas / dias_uteis / horas_dia / salas
+        st.session_state['taxa_sala'] = taxa_sala
+
+        # Exibir o resultado
         st.markdown(
             "<h2 style='font-size:48px;'>Taxa Sala: R$ {valor}</h2>".format(
                 valor=f"{taxa_sala:,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.')
