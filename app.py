@@ -41,9 +41,19 @@ elif st.session_state['page'] == 2:
     # Porém, como ele foi calculado na página 1, é importante armazená-lo também no session_state
     # Então aqui, vamos usar `st.session_state` para garantir persistência
     total_despesas = st.session_state.get('total_despesas', 0)
+
+    # Você pode atualizar esses valores na página 1, assim:
+    # (No código da página 1, após calcular total_despesas)
+    # st.session_state['total_despesas'] = total_despesas
+    # Assim, eles ficam disponíveis aqui
+    
+    # Aqui, por simplicidade, vamos recalcular usando o valor de sessão se estiver disponível
+    if total_despesas == 0:
+        # Como fallback, talvez recomende calcular novamente ou armazenar na sessão
+        total_despesas = 0  # Ou fazer outra lógica
     
     dias_uteis = st.number_input("Quantos dias úteis funciona por mês?", min_value=0, step=1)
-    horas_dia = st.number_input("Quantas horas por dia?", min_value=0, step=1)
+    horas_dia = st.number_input("Quantas horas por dia?", min_value=1, step=0)
     salas = st.number_input("Quantas salas de procedimento?", min_value=0, step=1)
     
     # Evitar divisão por zero
