@@ -53,7 +53,7 @@ elif st.session_state['page'] == 2:
 
         # Exibir o resultado
         st.markdown(
-            "<h2 style='font-size:30px;'>Taxa Sala: R$ {valor}</h2>".format(
+            "<h2 style='font-size:30px; color:purple;'>Taxa Sala: R$ {valor}</h2>".format(
                 valor=f"{taxa_sala:,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.')
             ),
             unsafe_allow_html=True
