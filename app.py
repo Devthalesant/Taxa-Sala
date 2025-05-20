@@ -116,21 +116,32 @@ elif st.session_state['page'] == 4:
     st.markdown('<h2 style="font-size:20px; color:purple; text-decoration:underline;">KPI´s Taxa Sala:</h2>', unsafe_allow_html=True)
     margem_rs = preco_venda-(tempo/60*taxa_sala)-consumivel-(aliquota*preco_venda)-(cartao*preco_venda)-(comissao*preco_venda)-mod
     margem_porcento = (margem_rs/preco_venda)*100
-    margem_formatada = f"{margem_porcento:.2f}".replace('.', ',')
-    margem_reais_formatada = f"{margem_rs:,.2f}".replace('.', ',')  # coloca vírgula como decimal e separa milhar
-
     proced_pe = total_despesas/(margem_rs+(tempo/60*taxa_sala))
-    format_proced_pe = f"{proced_pe:.0f}"
     fat_pe = proced_pe*preco_venda
     mod_pe = proced_pe*mod
     ocupacao_pe = (proced_pe*tempo)/(60*salas*horas_dia*dias_uteis)*100
-    format_ocupacao_pe = f"{ocupacao_pe:.2f}"
     fat_max = (fat_pe/ocupacao_pe)*100
     num_prced_max = fat_max/preco_venda
     lucro_max = (num_prced_max*(margem_rs+((tempo/60)*taxa_sala)))-total_despesas
     fat_hora = preco_venda/(tempo/60)
     mod_hora = mod/(tempo/60)
     lucro_hora= (margem_rs+(tempo/60*taxa_sala))/(tempo/60)
+
+    margem_porcento = f"{margem_porcento:.2f}".replace('.', ',')
+    margem_rs = f"{margem_rs:,.2f}".replace('.', ',')  # coloca vírgula como decimal e separa milhar
+    ocupacao_pe = f"{ocupacao_pe:.2f}"
+    proced_pe = f"{proced_pe:.2f}".replace('.', ',')
+    fat_pe = f"{fat_pe:.2f}".replace('.', ',')
+    mod_pe = f"{mod_pe:.2f}".replace('.', ',')
+    fat_max = f"{fat_max:.2f}".replace('.', ',')
+    num_prced_max = f"{num_prced_max:.2f}".replace('.', ',')
+    lucro_max = f"{lucro_max:.2f}".replace('.', ',')
+    fat_hora = f"{fat_hora:.2f}".replace('.', ',')
+    mod_hora = f"{mod_hora:.2f}".replace('.', ',')
+    lucro_hora = f"{lucro_hora:.2f}".replace('.', ',')
+
+
+
 
     with st.container():
         # Linha 1 - cabeçalhos
@@ -149,7 +160,7 @@ elif st.session_state['page'] == 4:
             st.markdown(
                 f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
                 f"<strong style='font-size:20px; color:#6A1B9A;'>Margem(R$)</strong><br>"
-                f"<span style='font-size:24px;'>{margem_reais_formatada}</span>"
+                f"<span style='font-size:24px;'>{margem_rs}</span>"
                 f"</div>", unsafe_allow_html=True
             )
 
@@ -200,6 +211,6 @@ elif st.session_state['page'] == 4:
         st.markdown(
             f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
             f"<strong style='font-size:20px; color:#6A1B9A;'>Margem (%)</strong><br>"
-            f"<span style='font-size:24px;'>{margem_formatada}</span>"
+            f"<span style='font-size:24px;'>{margem_porcento}</span>"
             "</div>", unsafe_allow_html=True
         )
