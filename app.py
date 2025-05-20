@@ -155,7 +155,7 @@ elif st.session_state['page'] == 4:
         st.markdown(
             f"""
             <div style='text-align:center;'>
-                <h2 style='color:#37474F;'>Procedimento :{procedimnto}</h2>
+                <h2 style='color:#37474F;'>Procedimento : {procedimnto}</h2>
             </div>
             """, unsafe_allow_html=True
         )
