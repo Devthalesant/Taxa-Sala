@@ -11,7 +11,7 @@ def next_page():
 # Página 1 - Custos Fixos
 if st.session_state['page'] == 1:
     st.image("images/Logo-Imersão-horizontal-fundoclaro-png.png",use_container_width=False)
-    st.title("Imersão 360 - Taxa Sala")
+    st.title("Taxa Sala")
     st.subheader("A seguir, faremos algumas perguntas para definir a Taxa Sala da sua clínica.")
     st.header("Custos Fixos:")
 
@@ -37,7 +37,7 @@ if st.session_state['page'] == 1:
 # Página 2 - Informações sobre funcionamento
 elif st.session_state['page'] == 2:
     st.write(f"PáginaAtual: {st.session_state['page']}")
-    st.title("Imersão 360 - Taxa Sala")
+    st.title("Taxa Sala")
     st.header("Informações sobre Funcionamento:")
 
     total_despesas = st.session_state.get('total_despesas', 0)
@@ -71,7 +71,7 @@ elif st.session_state['page'] == 2:
 
 elif st.session_state['page'] == 3:
     st.write(f"PáginaAtual: {st.session_state['page']}")
-    st.title("Imersão 360 - Taxa Sala")
+    st.title("Taxa Sala")
     st.header("Outras Informações:")
 
     procedimnto = st.text_input("Qual o nome do Procedimento?")
@@ -113,7 +113,7 @@ elif st.session_state['page'] == 4:
     taxa_sala = st.session_state.get('taxa_sala',0)
 
 
-    st.title("Imersão 360 - Taxa Sala")
+    st.title("Taxa Sala")
     st.header("KPI´s Taxa Sala:")
     margem_rs = preco_venda-(tempo/60*taxa_sala)-consumivel-(aliquota*preco_venda)-(cartao*preco_venda)-(comissao*preco_venda)-mod
     margem_porcento = (margem_rs/preco_venda)*100
