@@ -195,7 +195,7 @@ elif st.session_state['page'] == 4:
             st.markdown(
                 f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
                 f"<strong style='font-size:20px; color:#6A1B9A;'>FAT(MAX)</strong><br>"
-                f"<span style='font-size:20px;'>{fat_max}</span>"
+                f"<span style='font-size:22px;'>{fat_max}</span>"
                 "</div>", unsafe_allow_html=True
             )
 
@@ -203,7 +203,7 @@ elif st.session_state['page'] == 4:
             st.markdown(
                 f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
                 f"<strong style='font-size:20px; color:#6A1B9A;'>Lucro Max</strong><br>"
-                f"<span style='font-size:20px;'>{lucro_max}</span>"
+                f"<span style='font-size:22px;'>{lucro_max}</span>"
                 "</div>", unsafe_allow_html=True
             )
 
