@@ -23,6 +23,9 @@ if st.session_state['page'] == 1:
 
     # Armazena na sessão
     st.session_state['total_despesas'] = total_despesas
+    st.session_state['aluguel'] = aluguel
+    st.session_state['funcionarios'] = funcionarios
+    st.session_state['demais'] = demais
 
     st.markdown(
         "<h2 style='font-size:48px;'>Total de Despesas: R$ {valor}</h2>".format(
@@ -58,3 +61,21 @@ elif st.session_state['page'] == 2:
         )
     else:
         st.write("Por favor, insira valores válidos para dias úteis, horas por dia e salas.")
+    
+    st.session_state['dias_uteis'] = dias_uteis
+    st.session_state['horas_dia'] = horas_dia
+    st.session_state['salas'] = salas
+    st.session_state['taxa_sala'] = taxa_sala
+
+elif st.session_state['page'] == 3:
+    st.title("Imersão 360 - Taxa Sala")
+    st.header("Outras Informações:")
+
+    procedimnto = st.text_input("Qual o nome do Procedimento?")
+    preco_venda = st.number_input("Qual o preço de venda? (R$)", min_value=0, step=1)
+    tempo = st.number_input("Quanto tempo leva fazendo? (em minutos)", min_value=0, step=1)
+    consumivel = st.number_input("Qual o gasto com consumivel? (R$)", min_value=0, step=1)
+    aliquota = st.number_input("Qual a aliquota de imposto? (%)", min_value=0, step=0.01) / 100
+    cartao = st.number_input("Qual a taxa de cartão de crédito? (%)", min_value=0, step=0.01) / 100
+    comissao = st.number_input("Qual o comissionamento de venda? (%)", min_value=0, step=0.01) / 100
+    mod = st.number_input("Qual valor pago ao profissinal pela execucao? (R$)", min_value=0, step=1)
