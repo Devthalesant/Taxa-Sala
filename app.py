@@ -121,7 +121,7 @@ elif st.session_state['page'] == 4:
     margem_reais_formatada = f"{margem_rs:,.2f}".replace('.', ',')  # coloca vírgula como decimal e separa milhar
 
     proced_pe = total_despesas/(margem_rs+(tempo/60*taxa_sala))
-    format_proced_pe = f"{proced_pe:.2f}"
+    format_proced_pe = f"{proced_pe:.0f}"
     fat_pe = proced_pe*preco_venda
     mod_pe = proced_pe*mod
     ocupacao_pe = (proced_pe*tempo)/(60*salas*horas_dia*dias_uteis)*100
