@@ -131,14 +131,14 @@ elif st.session_state['page'] == 4:
     margem_rs = f"{margem_rs:,.2f}".replace('.', ',')  # coloca vírgula como decimal e separa milhar
     ocupacao_pe = f"{ocupacao_pe:.2f}"
     proced_pe = f"{proced_pe:.0f}".replace('.', ',')
-    fat_pe = f"{fat_pe:.2f}".replace('.', ',')
-    mod_pe = f"{mod_pe:.2f}".replace('.', ',')
-    fat_max = f"{fat_max:.2f}".replace('.', ',')
+    fat_pe = f"{fat_pe:,.2f}".replace('.', ',')
+    mod_pe = f"{mod_pe:,.2f}".replace('.', ',')
+    fat_max = f"{fat_max:,.2f}".replace('.', ',')
     num_prced_max = f"{num_prced_max:.2f}".replace('.', ',')
-    lucro_max = f"{lucro_max:.2f}".replace('.', ',')
-    fat_hora = f"{fat_hora:.2f}".replace('.', ',')
-    mod_hora = f"{mod_hora:.2f}".replace('.', ',')
-    lucro_hora = f"{lucro_hora:.2f}".replace('.', ',')
+    lucro_max = f"{lucro_max:,.2f}".replace('.', ',')
+    fat_hora = f"{fat_hora:,.2f}".replace('.', ',')
+    mod_hora = f"{mod_hora:,.2f}".replace('.', ',')
+    lucro_hora = f"{lucro_hora:,.2f}".replace('.', ',')
 
 
 
