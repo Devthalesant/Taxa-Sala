@@ -132,50 +132,82 @@ elif st.session_state['page'] == 4:
     mod_hora = mod/(tempo/60)
     lucro_hora= (margem_rs+(tempo/60*taxa_sala))/(tempo/60)
 
-    nomes = ['fat_pe', 'mod_pe', 'fat_max', 'lucro_max', 'fat_hora', 'mod_hora', 'lucro_hora']
-    variaveis_para_formatar_rs = [fat_pe,mod_pe,fat_max,lucro_max,fat_hora,mod_hora,lucro_hora]
+    with st.container():
+        # Linha 1 - cabeçalhos
+        st.markdown(
+            """
+            <div style='text-align:center;'>
+                <h2 style='color:#37474F;'>KPIs da Taxa Sala</h2>
+            </div>
+            """, unsafe_allow_html=True
+        )
 
-    variaveis_formatadas = {}
+        # Linha 2 - caixas
+        col1, col2, col3, col4 = st.columns(4)
 
-    for nome, valor in zip(nomes, variaveis_para_formatar_rs):
-        variavel_formatada = f"{valor:,.2f}".replace('.', 'X').replace(',', '.').replace('X', ',')
-        variaveis_formatadas[nome] = variavel_formatada
+        with col1:
+            st.markdown(
+                f"<div style='background-color:#E1BEE7; padding:15px; border-radius:10px; text-align:center;'>"
+                f"<strong style='font-size:20px; color:#6A1B9A;'>Margem(R$)</strong><br>"
+                f"<span style='font-size:24px;'>{margem_rs}</span>"
+                f"</div>", unsafe_allow_html=True
+            )
 
+        with col2:
+            st.markdown(
+                f"<div style='background-color:#81D4FA; padding:15px; border-radius:10px; text-align:center;'>"
+                f"<strong style='font-size:20px; color:#0288D1;'>Procedimento(PE)</strong><br>"
+                f"<span style='font-size:24px;'>{proced_pe}</span>"
+                f"</div>", unsafe_allow_html=True
+            )
 
-    col1, col2 = st.columns(2)
+        with col3:
+            st.markdown(
+                f"<div style='background-color:#FFF59D; padding:15px; border-radius:10px; text-align:center;'>"
+                f"<strong style='font-size:20px; color:#F57F17;'>FAT(PE)</strong><br>"
+                f"<span style='font-size:24px;'>{fat_pe}</span>"
+                "</div>", unsafe_allow_html=True
+            )
 
-    with col1:
-        st.markdown(
-        "<h3 style='font-size:30px;'>Margem(R$) {}</h3>".format(margem_reais_formatada),
-        unsafe_allow_html=True
-    )
-        st.markdown(
-        "<h3 style='font-size:30px;'>Procedimento(PE) {}</h3>".format(format_proced_pe),
-        unsafe_allow_html=True
-    )
-        st.markdown(
-        "<h3 style='font-size:30px;'>MOD(PE) R$ {}</h3>".format(variaveis_formatadas["mod_pe"]),
-        unsafe_allow_html=True
-    )
-        st.markdown(
-        "<h3 style='font-size:30px;'>FAT(MAX) R$ {}</h3>".format(variaveis_formatadas["fat_max"]),
-        unsafe_allow_html=True
-    )
+        with col4:
+            st.markdown(
+                f"<div style='background-color:#A5D6A7; padding:15px; border-radius:10px; text-align:center;'>"
+                f"<strong style='font-size:20px; color:#33691E;'>Ocupação</strong><br>"
+                f"<span style='font-size:24px;'>{ocupacao_pe}</span>"
+                "</div>", unsafe_allow_html=True
+            )
 
-    with col2:
-        st.markdown(
-        "<h3 style='font-size:30px;'>Margem(%) {}</h3>".format(margem_formatada),
-        unsafe_allow_html=True
-    )
-        st.markdown(
-        "<h3 style='font-size:30px;'>FAT(PE) R$ {}</h3>".format(variaveis_formatadas["fat_pe"]),
-        unsafe_allow_html=True
-    )
-        st.markdown(
-        "<h3 style='font-size:30px;'>Ocupação(PE) % {}</h3>".format(format_ocupacao_pe),
-        unsafe_allow_html=True)
+    # Linha 3 - segunda linha de KPIs
+    col5, col6, col7, col8 = st.columns(4)
 
+    with col5:
         st.markdown(
-        "<h3 style='font-size:30px;'>Lucro(Max) R$ {}</h3>".format(variaveis_formatadas["lucro_max"]),
-        unsafe_allow_html=True
-    )
+            f"<div style='background-color:#EF9A9A; padding:15px; border-radius:10px; text-align:center;'>"
+            f"<strong style='font-size:20px; color:#C62828;'>FAT(MAX)</strong><br>"
+            f"<span style='font-size:24px;'>{fat_max}</span>"
+            "</div>", unsafe_allow_html=True
+        )
+
+    with col6:
+        st.markdown(
+            f"<div style='background-color:#FFE082; padding:15px; border-radius:10px; text-align:center;'>"
+            f"<strong style='font-size:20px; color:#F57F17;'>Lucro Max</strong><br>"
+            f"<span style='font-size:24px;'>{lucro_max}</span>"
+            "</div>", unsafe_allow_html=True
+        )
+
+    with col7:
+        st.markdown(
+            f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
+            f"<strong style='font-size:20px; color:#6A1B9A;'>Margem (%)</strong><br>"
+            f"<span style='font-size:24px;'>{margem_formatada}</span>"
+            "</div>", unsafe_allow_html=True
+        )
+    with col8:
+        # Espaço para informações adicionais ou dicas
+        st.markdown(
+            "<div style='background-color:#B0BEC5; padding:15px; border-radius:10px; text-align:center;'>"
+            "<strong style='font-size:20px; color:#455A64;'>Extras</strong><br>"
+            "<span style='font-size:16px; color:#333;'>Aqui você pode inserir informações adicionais, sugestões ou lembretes importantes.</span>"
+            "</div>", unsafe_allow_html=True
+        )
