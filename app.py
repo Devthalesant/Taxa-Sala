@@ -61,6 +61,9 @@ elif st.session_state['page'] == 2:
         )
     else:
         st.write("Por favor, insira valores válidos para dias úteis, horas por dia e salas.")
+
+    if st.button("Próxima seção", on_click=next_page):
+        pass
     
     st.session_state['dias_uteis'] = dias_uteis
     st.session_state['horas_dia'] = horas_dia
