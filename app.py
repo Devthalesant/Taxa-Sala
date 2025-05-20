@@ -43,7 +43,6 @@ elif st.session_state['page'] == 2:
     </div>
     """, unsafe_allow_html=True
     )
-    st.write(f"PáginaAtual: {st.session_state['page']}")
     st.title("Taxa Sala")
     st.header("Informações sobre Funcionamento:")
 
