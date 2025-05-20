@@ -31,9 +31,6 @@ if st.session_state['page'] == 1:
     
     if st.button("Salvar Despesas"):
         st.session_state['total_despesas'] = total_despesas
-        st.session_state['aluguel'] = aluguel
-        st.session_state['funcionarios'] = funcionarios
-        st.session_state['demais'] = demais
         next_page()
 
 # Página 2 - Informações sobre funcionamento
