@@ -65,10 +65,10 @@ elif st.session_state['page'] == 2:
     if st.button("Próxima seção", on_click=next_page):
         pass
     
-    st.session_state['dias_uteis'] = dias_uteis
-    st.session_state['horas_dia'] = horas_dia
-    st.session_state['salas'] = salas
-    st.session_state['taxa_sala'] = taxa_sala
+        st.session_state['dias_uteis'] = dias_uteis
+        st.session_state['horas_dia'] = horas_dia
+        st.session_state['salas'] = salas
+        st.session_state['taxa_sala'] = taxa_sala
 
 elif st.session_state['page'] == 3:
     st.title("Imersão 360 - Taxa Sala")
