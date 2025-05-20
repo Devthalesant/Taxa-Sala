@@ -71,7 +71,8 @@ elif st.session_state['page'] == 2:
 
 elif st.session_state['page'] == 3:
     st.image("images/Icone Horizontal.png")
-    st.markdown('<h1 style="font-size:30px;">Taxa Sala</h1>', unsafe_allow_html=True)
+    st.markdown(
+    '<h1 style="font-size:30px; color:purple; text-decoration:underline;">Taxa Sala</h1>',unsafe_allow_html=True)
     st.markdown('<h2 style="font-size:20px;">Outras Informações:</h2>', unsafe_allow_html=True)
 
     procedimnto = st.text_input("Qual o nome do Procedimento?")
