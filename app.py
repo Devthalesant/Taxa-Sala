@@ -29,7 +29,7 @@ if st.session_state['page'] == 1:
         unsafe_allow_html=True
     )
     
-    if st.button("Próxima seção", on_click=next_page):
+    if st.button("Salvar Despesas", on_click=next_page):
         pass
 
         # Armazena na sessão
@@ -62,7 +62,7 @@ elif st.session_state['page'] == 2:
     else:
         st.write("Por favor, insira valores válidos para dias úteis, horas por dia e salas.")
 
-    if st.button("Próxima seção", on_click=next_page):
+    if st.button("Salvar Informações de Funcionamento", on_click=next_page):
         pass
     
         st.session_state['dias_uteis'] = dias_uteis
@@ -82,3 +82,16 @@ elif st.session_state['page'] == 3:
     cartao = st.number_input("Qual a taxa de cartão de crédito? (%)", min_value=0.00, step=0.00) / 100
     comissao = st.number_input("Qual o comissionamento de venda? (%)", min_value=0.00, step=0.00) / 100
     mod = st.number_input("Qual valor pago ao profissinal pela execucao? (R$)", min_value=0.00, step=1.00)
+
+    if st.button("Salvar Outras Informaçõs e Calcular", on_click=next_page):
+        pass
+    
+        st.session_state['procedimnto'] = procedimnto
+        st.session_state['preco_venda'] = preco_venda
+        st.session_state['tempo'] = tempo
+        st.session_state['consumivel'] = consumivel
+        st.session_state['aliquota'] = aliquota
+        st.session_state['cartao'] = cartao
+        st.session_state['comissao'] = comissao
+        st.session_state['mod'] = mod
+
