@@ -31,31 +31,24 @@ if st.session_state['page'] == 1:
     # Botão para avançar para a próxima sessão
     if st.button("Próxima seção", on_click=next_page):
         pass  # A ação já está definida na função
+
+    elif st.session_state['page'] == 2:
+        st.title("Imersão 360 - Taxa Sala")
+        st.header("Informações sobre Funcionamento:")
+        # Demais inputs
+        dias_uteis = st.number_input("Quantos dias úteis funciona por mês?", min_value=1, step=1)
+        horas_dia = st.number_input("Quantas horas por dia?", min_value=1, step=1)
+        salas = st.number_input("Quantas salas de procedimento?", min_value=1, step=1)
+        
+        taxa_sala = total_despesas /dias_uteis/horas_dia/salas
+        st.markdown(
+            "<h2 style='font-size:48px;'>Taxa Sala: R$ {valor}</h2>".format(
+                valor=f"{taxa_sala:,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.')
+            ),
+            unsafe_allow_html=True
+        )
+
     
-st.write("")  # Quebra de linha para separar visualmente
-
-st.header("Informações sobre Funcionamento:")
-# Demais inputs
-dias_uteis = st.number_input("Quantos dias úteis funciona por mês?", min_value=1, step=1)
-horas_dia = st.number_input("Quantas horas por dia?", min_value=1, step=1)
-salas = st.number_input("Quantas salas de procedimento?", min_value=1, step=1)
-
-
-# Evitar divisão por zero
-if dias_uteis > 0:
-    taxa_sala = total_despesas /dias_uteis/horas_dia/salas
-
-    st.markdown(
-        "<h2 style='font-size:48px;'>Taxa Sala: R$ {valor}</h2>".format(
-            valor=f"{taxa_sala:,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.')
-        ),
-        unsafe_allow_html=True
-    )
-else:
-    st.write("Por favor, insira valores válidos para dias úteis, horas por dia e salas.")
-
-st.header("Procedimento:")
-
 procedimnto = st.text_input("Qual o nome do Procedimento?")
 preco_venda = st.number_input("Qual o preço de venda? (R$)", min_value=1, step=1)
 tempo = st.number_input("Quanto tempo leva fazendo? (em minutos)", min_value=1, step=1)
