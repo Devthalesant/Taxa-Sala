@@ -1,25 +1,37 @@
 import streamlit as st
 
-st.title("Imersão 360 - Taxa Sala")
+# Verifica se o estado da página está definido; se não, inicia na página 1
+if 'page' not in st.session_state:
+    st.session_state['page'] = 1
 
-st.subheader("A seguir, faremos algumas perguntas para definir a Taxa Sala da sua clínica.")
+# Função para mudar para a próxima página
+def next_page():
+    st.session_state['page'] += 1
 
-st.header("Custos Fixos:")
+# Página 1 - Custos Fixos
+if st.session_state['page'] == 1:
+    st.title("Imersão 360 - Taxa Sala")
+    st.subheader("A seguir, faremos algumas perguntas para definir a Taxa Sala da sua clínica.")
+    st.header("Custos Fixos:")
 
-# Inputs
-aluguel = st.number_input("Qual o valor do seu aluguel? (R$)", min_value=1, step=1)
-funcionarios = st.number_input("Qual o gasto total com funcionarios? (R$)", min_value=1, step=1)
-demais = st.number_input("Qual o valor total com demais gastos? (R$)", min_value=1, step=1)
+    # Inputs
+    aluguel = st.number_input("Qual o valor do seu aluguel? (R$)", min_value=1, step=1, key='aluguel')
+    funcionarios = st.number_input("Qual o gasto total com funcionarios? (R$)", min_value=1, step=1, key='funcionarios')
+    demais = st.number_input("Qual o valor total com demais gastos? (R$)", min_value=1, step=1, key='demais')
 
-# Cálculo do total de despesas
-total_despesas = aluguel + funcionarios + demais
+    total_despesas = aluguel + funcionarios + demais
 
-st.markdown(
-    "<h2 style='font-size:48px;'>Total de Despesas: R$ {valor}</h2>".format(
-        valor=f"{total_despesas:,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.')
-    ),
-    unsafe_allow_html=True
-)
+    st.markdown(
+        "<h2 style='font-size:48px;'>Total de Despesas: R$ {valor}</h2>".format(
+            valor=f"{total_despesas:,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.')
+        ),
+        unsafe_allow_html=True
+    )
+
+    # Botão para avançar para a próxima sessão
+    if st.button("Próxima seção", on_click=next_page):
+        pass  # A ação já está definida na função
+    
 st.write("")  # Quebra de linha para separar visualmente
 
 st.header("Informações sobre Funcionamento:")
