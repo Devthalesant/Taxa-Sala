@@ -40,7 +40,7 @@ elif st.session_state['page'] == 2:
     # Para manter o valor de total_despesas acessível aqui, você pode aproveitar o session_state
     # Porém, como ele foi calculado na página 1, é importante armazená-lo também no session_state
     # Então aqui, vamos usar `st.session_state` para garantir persistência
-    total_despesas = st.session_state.get('total_despesas', 0)
+    total_despesas = st.session_state.get('total_despesas',1)
 
     # Você pode atualizar esses valores na página 1, assim:
     # (No código da página 1, após calcular total_despesas)
