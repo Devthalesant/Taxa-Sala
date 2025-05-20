@@ -78,7 +78,7 @@ elif st.session_state['page'] == 3:
     preco_venda = st.number_input("Qual o preço de venda? (R$)", min_value=0, step=1)
     tempo = st.number_input("Quanto tempo leva fazendo? (em minutos)", min_value=0, step=1)
     consumivel = st.number_input("Qual o gasto com consumivel? (R$)", min_value=0, step=1)
-    aliquota = st.number_input("Qual a aliquota de imposto? (%)", min_value=0.01, step=0.01) / 100
-    cartao = st.number_input("Qual a taxa de cartão de crédito? (%)", min_value=0.01, step=0.01) / 100
-    comissao = st.number_input("Qual o comissionamento de venda? (%)", min_value=0.01, step=0.01) / 100
-    mod = st.number_input("Qual valor pago ao profissinal pela execucao? (R$)", min_value=1, step=1)
+    aliquota = st.number_input("Qual a aliquota de imposto? (%)", min_value=0.00, step=0.01) / 100
+    cartao = st.number_input("Qual a taxa de cartão de crédito? (%)", min_value=0.00, step=0.01) / 100
+    comissao = st.number_input("Qual o comissionamento de venda? (%)", min_value=0.00, step=0.01) / 100
+    mod = st.number_input("Qual valor pago ao profissinal pela execucao? (R$)", min_value=0, step=1)
