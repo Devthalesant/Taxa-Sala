@@ -152,6 +152,14 @@ elif st.session_state['page'] == 4:
             """, unsafe_allow_html=True
         )
 
+        st.markdown(
+            f"""
+            <div style='text-align:center;'>
+                <h2 style='color:#37474F;'>Procedimento :{procedimnto}</h2>
+            </div>
+            """, unsafe_allow_html=True
+        )
+
         # Linha 2 - caixas
         col1, col2, col3, col4 = st.columns(4)
 
