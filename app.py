@@ -97,7 +97,7 @@ elif st.session_state['page'] == 3:
         next_page()
 
 elif st.session_state['page'] == 4:
-    st.write(f"PáginaAtual: {st.session_state['page']}")
+    st.image("images/Icone Horizontal.png")
 
     total_despesas = st.session_state.get('total_despesas', 0)
     procedimnto = st.session_state.get('procedimnto',0)
@@ -114,8 +114,11 @@ elif st.session_state['page'] == 4:
     taxa_sala = st.session_state.get('taxa_sala',0)
 
 
-    st.title("Taxa Sala")
-    st.header("KPI´s Taxa Sala:")
+    st.markdown(
+    '<h1 style="font-size:30px; color:purple; text-decoration:underline;">Taxa Sala</h1>',unsafe_allow_html=True)
+    st.markdown('<h2 style="font-size:20px;color:purple; text-decoration:underline;">Outras Informações:</h2>', unsafe_allow_html=True)
+
+    st.markdown('<h2 style="font-size:20px; color:purple; text-decoration:underline;">KPI´s Taxa Sala:</h2>', unsafe_allow_html=True)
     margem_rs = preco_venda-(tempo/60*taxa_sala)-consumivel-(aliquota*preco_venda)-(cartao*preco_venda)-(comissao*preco_venda)-mod
     margem_porcento = (margem_rs/preco_venda)*100
     margem_formatada = f"{margem_porcento:.2f}".replace('.', ',')
