@@ -133,7 +133,7 @@ elif st.session_state['page'] == 4:
     fat_pe = "R$ " + f"{fat_pe:,.2f}".replace('.', ',')
     mod_pe = "R$ " + f"{mod_pe:,.2f}".replace('.', ',')
     fat_max = "R$ " + f"{fat_max:,.2f}".replace('.', ',')
-    num_prced_max = f"{num_prced_max:.2f}".replace('.', ',')
+    num_prced_max = f"{num_prced_max:.0f}".replace('.', ',')
     lucro_max = "R$ " + f"{lucro_max:,.2f}".replace('.', ',')
     fat_hora = "R$ " + f"{fat_hora:,.2f}".replace('.', ',')
     mod_hora = "R$ " + f"{mod_hora:,.2f}".replace('.', ',')
