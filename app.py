@@ -39,11 +39,12 @@ elif st.session_state['page'] == 2:
     st.header("Informações sobre Funcionamento:")
 
     total_despesas = st.session_state.get('total_despesas', 0)
+
     dias_uteis = st.number_input("Quantos dias úteis funciona por mês?", min_value=1, step=1)
     horas_dia = st.number_input("Quantas horas por dia?", min_value=1, step=1)
     salas = st.number_input("Quantas salas de procedimento?", min_value=1, step=1)
 
-    # Só calcular se todos os valores forem válidos (>0)
+    # Calcule quando tiver valores válidos
     if dias_uteis > 0 and horas_dia > 0 and salas > 0:
         taxa_sala = total_despesas / dias_uteis / horas_dia / salas
         st.session_state['taxa_sala'] = taxa_sala
