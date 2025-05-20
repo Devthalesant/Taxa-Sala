@@ -195,7 +195,7 @@ elif st.session_state['page'] == 4:
             st.markdown(
                 f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
                 f"<strong style='font-size:20px; color:#6A1B9A;'>FAT(MAX)</strong><br>"
-                f"<span style='font-size:22px;'>{fat_max}</span>"
+                f"<span style='font-size:21,5px;'>{fat_max}</span>"
                 "</div>", unsafe_allow_html=True
             )
 
