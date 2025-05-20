@@ -4,7 +4,7 @@ import streamlit as st
 if 'page' not in st.session_state:
     st.session_state['page'] = 1
 
-# Função para mudar para a próxima página
+# Função para avançar a página
 def next_page():
     st.session_state['page'] += 1
 
@@ -21,14 +21,17 @@ if st.session_state['page'] == 1:
 
     total_despesas = aluguel + funcionarios + demais
 
+    # Armazena na sessão
+    st.session_state['total_despesas'] = total_despesas
+
     st.markdown(
         "<h2 style='font-size:48px;'>Total de Despesas: R$ {valor}</h2>".format(
             valor=f"{total_despesas:,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.')
+
         ),
         unsafe_allow_html=True
     )
     
-    # Botão para avançar para a próxima sessão
     if st.button("Próxima seção", on_click=next_page):
         pass
 
@@ -37,24 +40,12 @@ elif st.session_state['page'] == 2:
     st.title("Imersão 360 - Taxa Sala")
     st.header("Informações sobre Funcionamento:")
 
-    # Para manter o valor de total_despesas acessível aqui, você pode aproveitar o session_state
-    # Porém, como ele foi calculado na página 1, é importante armazená-lo também no session_state
-    # Então aqui, vamos usar `st.session_state` para garantir persistência
-    total_despesas = st.session_state.get('total_despesas',1)
+    # Recupera o valor de despesas
+    total_despesas = st.session_state.get('total_despesas', 0)
 
-    # Você pode atualizar esses valores na página 1, assim:
-    # (No código da página 1, após calcular total_despesas)
-    # st.session_state['total_despesas'] = total_despesas
-    # Assim, eles ficam disponíveis aqui
-    
-    # Aqui, por simplicidade, vamos recalcular usando o valor de sessão se estiver disponível
-    if total_despesas == 0:
-        # Como fallback, talvez recomende calcular novamente ou armazenar na sessão
-        total_despesas = 0  # Ou fazer outra lógica
-    
-    dias_uteis = st.number_input("Quantos dias úteis funciona por mês?", min_value=0, step=1)
-    horas_dia = st.number_input("Quantas horas por dia?", min_value=1, step=0)
-    salas = st.number_input("Quantas salas de procedimento?", min_value=0, step=1)
+    dias_uteis = st.number_input("Quantos dias úteis funciona por mês?", min_value=1, step=1)
+    horas_dia = st.number_input("Quantas horas por dia?", min_value=1, step=1)
+    salas = st.number_input("Quantas salas de procedimento?", min_value=1, step=1)
     
     # Evitar divisão por zero
     if dias_uteis > 0 and horas_dia > 0 and salas > 0:
@@ -67,6 +58,3 @@ elif st.session_state['page'] == 2:
         )
     else:
         st.write("Por favor, insira valores válidos para dias úteis, horas por dia e salas.")
-
-
-    
