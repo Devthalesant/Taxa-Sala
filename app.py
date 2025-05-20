@@ -37,7 +37,7 @@ if st.session_state['page'] == 1:
 # Página 2 - Informações sobre funcionamento
 elif st.session_state['page'] == 2:
     st.image("images/Icone Horizontal.png")
-    st.title("Taxa Sala")
+    st.markdown('<h1 style="font-size:30px;">Taxa Sala</h1>', unsafe_allow_html=True)
     st.markdown('<h2 style="font-size:20px;">Informações sobre Funcionamento:</h2>', unsafe_allow_html=True)
 
     total_despesas = st.session_state.get('total_despesas', 0)
@@ -70,9 +70,8 @@ elif st.session_state['page'] == 2:
         next_page()
 
 elif st.session_state['page'] == 3:
-    st.write(f"PáginaAtual: {st.session_state['page']}")
-    st.title("Taxa Sala")
-    st.header("Outras Informações:")
+    st.markdown('<h1 style="font-size:30px;">Taxa Sala</h1>', unsafe_allow_html=True)
+    st.markdown('<h2 style="font-size:20px;">Outras Informações:</h2>', unsafe_allow_html=True)
 
     procedimnto = st.text_input("Qual o nome do Procedimento?")
     preco_venda = st.number_input("Qual o preço de venda? (R$)", min_value=0.00, step=1.00)
