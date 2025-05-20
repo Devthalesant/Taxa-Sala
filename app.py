@@ -167,7 +167,7 @@ elif st.session_state['page'] == 4:
         with col2:
             st.markdown(
                 f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
-                f"<strong style='font-size:20px; color:#6A1B9A;'>Procedimento(PE)</strong><br>"
+                f"<strong style='font-size:20px; color:#6A1B9A;'>Quantidade(PE)</strong><br>"
                 f"<span style='font-size:24px;'>{proced_pe}</span>"
                 f"</div>", unsafe_allow_html=True
             )
