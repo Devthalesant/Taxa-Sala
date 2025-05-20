@@ -166,21 +166,21 @@ elif st.session_state['page'] == 4:
         with col2:
             st.markdown(
                 f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
-                f"<strong style='font-size:20px; color:#6A1B9A;'>Margem (%)</strong><br>"
+                f"<strong style='font-size:20px; color:#6A1B9A;'>Margem(%)</strong><br>"
                 f"<span style='font-size:24px;'>{margem_porcento}</span>"
                 "</div>", unsafe_allow_html=True
             )
         with col3:
             st.markdown(
                 f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
-                f"<strong style='font-size:20px; color:#6A1B9A;'>Quantidade(PE)</strong><br>"
+                f"<strong style='font-size:20px; color:#6A1B9A;'>Quantidade(Pe)</strong><br>"
                 f"<span style='font-size:24px;'>{proced_pe}</span>"
                 f"</div>", unsafe_allow_html=True
             )
         with col4:
             st.markdown(
                 f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
-                f"<strong style='font-size:20px; color:#6A1B9A;'>FAT(PE)</strong><br>"
+                f"<strong style='font-size:20px; color:#6A1B9A;'>FAT(Pe)</strong><br>"
                 f"<span style='font-size:24px;'>{fat_pe}</span>"
                 "</div>", unsafe_allow_html=True
             )
@@ -191,7 +191,7 @@ elif st.session_state['page'] == 4:
         with col5:
             st.markdown(
                 f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
-                f"<strong style='font-size:20px; color:#6A1B9A;'>MOD (PE)</strong><br>"
+                f"<strong style='font-size:20px; color:#6A1B9A;'>MOD(Pe)</strong><br>"
                 f"<span style='font-size:24px;'>{mod_pe}</span>"
                 "</div>", unsafe_allow_html=True
             )
@@ -199,7 +199,7 @@ elif st.session_state['page'] == 4:
         with col6:
             st.markdown(
                 f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
-                f"<strong style='font-size:20px; color:#6A1B9A;'>Ocupação (%)</strong><br>"
+                f"<strong style='font-size:20px; color:#6A1B9A;'>Ocupação(%)</strong><br>"
                 f"<span style='font-size:24px;'>{ocupacao_pe}</span>"
                 "</div>", unsafe_allow_html=True
             )
@@ -207,7 +207,7 @@ elif st.session_state['page'] == 4:
         with col7:
             st.markdown(
                 f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
-                f"<strong style='font-size:20px; color:#6A1B9A;'>FAT(MAX)</strong><br>"
+                f"<strong style='font-size:20px; color:#6A1B9A;'>FAT(Max)</strong><br>"
                 f"<span style='font-size:20px;'>{fat_max}</span>"
                 "</div>", unsafe_allow_html=True
             )
@@ -215,7 +215,7 @@ elif st.session_state['page'] == 4:
         with col8:
             st.markdown(
                 f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
-                f"<strong style='font-size:20px; color:#6A1B9A;'>Quantidade (MAX)</strong><br>"
+                f"<strong style='font-size:20px; color:#6A1B9A;'>Quantidade(Max)</strong><br>"
                 f"<span style='font-size:24px;'>{num_prced_max}</span>"
                 "</div>", unsafe_allow_html=True
             )
@@ -226,7 +226,7 @@ elif st.session_state['page'] == 4:
         with col9:
             st.markdown(
                 f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
-                f"<strong style='font-size:20px; color:#6A1B9A;'>Lucro Max</strong><br>"
+                f"<strong style='font-size:20px; color:#6A1B9A;'>Lucro(Max)</strong><br>"
                 f"<span style='font-size:22px;'>{lucro_max}</span>"
                 "</div>", unsafe_allow_html=True
             )
@@ -234,7 +234,7 @@ elif st.session_state['page'] == 4:
         with col10:
             st.markdown(
                 f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
-                f"<strong style='font-size:20px; color:#6A1B9A;'>FAT (HORA)</strong><br>"
+                f"<strong style='font-size:20px; color:#6A1B9A;'>FAT(Hora)</strong><br>"
                 f"<span style='font-size:24px;'>{fat_hora}</span>"
                 "</div>", unsafe_allow_html=True
             )
@@ -243,7 +243,7 @@ elif st.session_state['page'] == 4:
         with col11:
             st.markdown(
                 f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
-                f"<strong style='font-size:20px; color:#6A1B9A;'>MOD (HORA)</strong><br>"
+                f"<strong style='font-size:20px; color:#6A1B9A;'>MOD(Hora)</strong><br>"
                 f"<span style='font-size:24px;'>{mod_hora}</span>"
                 "</div>", unsafe_allow_html=True
             )
@@ -251,7 +251,7 @@ elif st.session_state['page'] == 4:
         with col12:
             st.markdown(
                 f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
-                f"<strong style='font-size:20px; color:#6A1B9A;'>Lucro (HORA)</strong><br>"
+                f"<strong style='font-size:20px; color:#6A1B9A;'>Lucro(Hora)</strong><br>"
                 f"<span style='font-size:24px;'>{lucro_hora}</span>"
                 "</div>", unsafe_allow_html=True
             )
