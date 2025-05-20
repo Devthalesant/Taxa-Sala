@@ -36,13 +36,7 @@ if st.session_state['page'] == 1:
 
 # Página 2 - Informações sobre funcionamento
 elif st.session_state['page'] == 2:
-    st.markdown(
-    """
-    <div style="display: flex; align-items: flex-start;">
-        <img src="images/Icone Horizontal.png" width="200" style="margin: 0;">
-    </div>
-    """, unsafe_allow_html=True
-    )
+    st.image("images/Icone Horizontal.png")
     st.title("Taxa Sala")
     st.header("Informações sobre Funcionamento:")
 
