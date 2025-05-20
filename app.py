@@ -35,9 +35,6 @@ if st.session_state['page'] == 1:
         st.session_state['aluguel'] = aluguel
         st.session_state['funcionarios'] = funcionarios
         st.session_state['demais'] = demais
-        pass
-
-
 
 # Página 2 - Informações sobre funcionamento
 elif st.session_state['page'] == 2:
