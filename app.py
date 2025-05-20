@@ -183,42 +183,42 @@ elif st.session_state['page'] == 4:
         with col4:
             st.markdown(
                 f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
-                f"<strong style='font-size:20px; color:#6A1B9A;'>Ocupação</strong><br>"
+                f"<strong style='font-size:20px; color:#6A1B9A;'>Ocupação (%)</strong><br>"
                 f"<span style='font-size:24px;'>{ocupacao_pe}</span>"
                 "</div>", unsafe_allow_html=True
             )
 
-    # Linha 3 - segunda linha de KPIs
-    col5, col6, col7, col8 = st.columns(4)
+        # Linha 3 - segunda linha de KPIs
+        col5, col6, col7, col8 = st.columns(4)
 
-    with col5:
-        st.markdown(
-            f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
-            f"<strong style='font-size:20px; color:#6A1B9A;'>FAT(MAX)</strong><br>"
-            f"<span style='font-size:24px;'>{fat_max}</span>"
-            "</div>", unsafe_allow_html=True
-        )
+        with col5:
+            st.markdown(
+                f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
+                f"<strong style='font-size:20px; color:#6A1B9A;'>FAT(MAX)</strong><br>"
+                f"<span style='font-size:24px;'>{fat_max}</span>"
+                "</div>", unsafe_allow_html=True
+            )
 
-    with col6:
-        st.markdown(
-            f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
-            f"<strong style='font-size:20px; color:#6A1B9A;'>Lucro Max</strong><br>"
-            f"<span style='font-size:24px;'>{lucro_max}</span>"
-            "</div>", unsafe_allow_html=True
-        )
+        with col6:
+            st.markdown(
+                f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
+                f"<strong style='font-size:20px; color:#6A1B9A;'>Lucro Max</strong><br>"
+                f"<span style='font-size:24px;'>{lucro_max}</span>"
+                "</div>", unsafe_allow_html=True
+            )
 
-    with col7:
-        st.markdown(
-            f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
-            f"<strong style='font-size:20px; color:#6A1B9A;'>Margem (%)</strong><br>"
-            f"<span style='font-size:24px;'>{margem_porcento}</span>"
-            "</div>", unsafe_allow_html=True
-        )
+        with col7:
+            st.markdown(
+                f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
+                f"<strong style='font-size:20px; color:#6A1B9A;'>Margem (%)</strong><br>"
+                f"<span style='font-size:24px;'>{margem_porcento}</span>"
+                "</div>", unsafe_allow_html=True
+            )
 
-    with col8:
-        st.markdown(
-            f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
-            f"<strong style='font-size:20px; color:#6A1B9A;'>FAT (HORA)</strong><br>"
-            f"<span style='font-size:24px;'>{fat_hora}</span>"
-            "</div>", unsafe_allow_html=True
-        )
+        with col8:
+            st.markdown(
+                f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
+                f"<strong style='font-size:20px; color:#6A1B9A;'>FAT (HORA)</strong><br>"
+                f"<span style='font-size:24px;'>{fat_hora}</span>"
+                "</div>", unsafe_allow_html=True
+            )
