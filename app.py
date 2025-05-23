@@ -7,6 +7,7 @@ if 'page' not in st.session_state:
 # Função para avançar a página
 def next_page():
     st.session_state['page'] += 1
+    st.rerun()
 
 # Página 1 - Custos Fixos
 if st.session_state['page'] == 1:
