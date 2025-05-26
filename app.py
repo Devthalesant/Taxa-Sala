@@ -18,7 +18,7 @@ if st.session_state['page'] == 1:
 
     # Inputs
     aluguel = st.number_input("Qual o valor do seu aluguel? (R$)", min_value=1, step=1, key='aluguel')
-    funcionarios = st.number_input("Qual o gasto total com funcionarios? (R$)", min_value=1, step=1, key='funcionarios')
+    funcionarios = st.number_input("Qual o gasto total com funcionários? (R$)", min_value=1, step=1, key='funcionarios')
     demais = st.number_input("Qual o valor total com demais Depesas Fixas? (R$)", min_value=1, step=1, key='demais')
     funcionarios = funcionarios * 1.8  # Considerando 80% de encargos sociais
 
