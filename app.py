@@ -100,7 +100,7 @@ elif st.session_state['page'] == 3:
     aliquota = st.number_input("Qual a aliquota de imposto? (%)", min_value=0.00, step=0.01) / 100
     cartao = st.number_input("Qual a taxa de cartão de crédito? (%)", min_value=0.00, step=0.00) / 100
     comissao = st.number_input("Qual o comissionamento de venda? (%)", min_value=0.00, step=0.00) / 100
-    mod = st.number_input("Qual valor pago ao profissinal pela execucao? (R$)", min_value=0.00, step=1.00)
+    mod = st.number_input("Qual valor pago ao profissinal pela execução? (R$)", min_value=0.00, step=1.00)
 
     if st.button("Salvar Outras Informaçõs e Calcular"):
     
@@ -162,10 +162,19 @@ elif st.session_state['page'] == 4:
 
     with st.container():
         # Linha 1 - cabeçalhos
+
         st.markdown(
             """
             <div style='text-align:center;'>
-                <h2 style='color:#37474F;'>KPIs da Taxa Sala</h2>
+                <h2 style='color:#673AB7;'>Agora, como fazemos para pagar essa Conta?</h2>
+            </div>
+            """, unsafe_allow_html=True
+        )
+
+        st.markdown(
+            """
+            <div style='text-align:center;'>
+                <h2 style='color:#673AB7;'>KPIs da Taxa Sala</h2>
             </div>
             """, unsafe_allow_html=True
         )
@@ -173,7 +182,7 @@ elif st.session_state['page'] == 4:
         st.markdown(
             f"""
             <div style='text-align:center;'>
-                <h2 style='color:#37474F;'>Procedimento : {procedimnto}</h2>
+                <h2 style='color:#37474F;'>Procedimento : <strong>{procedimnto}</h2>
             </div>
             """, unsafe_allow_html=True
         )
@@ -185,7 +194,7 @@ elif st.session_state['page'] == 4:
             st.markdown(
                 f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
                 f"<strong style='font-size:20px; color:#6A1B9A;'>Margem(R$)</strong><br>"
-                f"<span style='font-size:24px;'>{margem_rs}</span>"
+                f"<span style='font-size:24px;'><strong>{margem_rs}</span>"
                 f"</div>", unsafe_allow_html=True
             )
 
@@ -193,21 +202,21 @@ elif st.session_state['page'] == 4:
             st.markdown(
                 f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
                 f"<strong style='font-size:20px; color:#6A1B9A;'>Margem(%)</strong><br>"
-                f"<span style='font-size:24px;'>{margem_porcento}</span>"
+                f"<span style='font-size:24px;'><strong>{margem_porcento}</span>"
                 "</div>", unsafe_allow_html=True
             )
         with col3:
             st.markdown(
                 f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
                 f"<strong style='font-size:20px; color:#6A1B9A;'>Quantidade(Pe)</strong><br>"
-                f"<span style='font-size:24px;'>{proced_pe}</span>"
+                f"<span style='font-size:24px;'><strong>{proced_pe}</span>"
                 f"</div>", unsafe_allow_html=True
             )
         with col4:
             st.markdown(
                 f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
                 f"<strong style='font-size:20px; color:#6A1B9A;'>FAT(Pe)</strong><br>"
-                f"<span style='font-size:24px;'>{fat_pe}</span>"
+                f"<span style='font-size:24px;'><strong>{fat_pe}</span>"
                 "</div>", unsafe_allow_html=True
             )
 
@@ -218,7 +227,7 @@ elif st.session_state['page'] == 4:
             st.markdown(
                 f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
                 f"<strong style='font-size:20px; color:#6A1B9A;'>MOD(Pe)</strong><br>"
-                f"<span style='font-size:24px;'>{mod_pe}</span>"
+                f"<span style='font-size:24px;'><strong>{mod_pe}</span>"
                 "</div>", unsafe_allow_html=True
             )
 
@@ -226,7 +235,7 @@ elif st.session_state['page'] == 4:
             st.markdown(
                 f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
                 f"<strong style='font-size:20px; color:#6A1B9A;'>Ocupação(%)</strong><br>"
-                f"<span style='font-size:24px;'>{ocupacao_pe}</span>"
+                f"<span style='font-size:24px;'><strong>{ocupacao_pe}</span>"
                 "</div>", unsafe_allow_html=True
             )
 
@@ -234,7 +243,7 @@ elif st.session_state['page'] == 4:
             st.markdown(
                 f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
                 f"<strong style='font-size:20px; color:#6A1B9A;'>FAT(Max)</strong><br>"
-                f"<span style='font-size:20px;'>{fat_max}</span>"
+                f"<span style='font-size:20px;'><strong>{fat_max}</span>"
                 "</div>", unsafe_allow_html=True
             )
 
@@ -242,7 +251,7 @@ elif st.session_state['page'] == 4:
             st.markdown(
                 f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
                 f"<strong style='font-size:20px; color:#6A1B9A;'>Quantidade(Max)</strong><br>"
-                f"<span style='font-size:24px;'>{num_prced_max}</span>"
+                f"<span style='font-size:24px;'><strong>{num_prced_max}</span>"
                 "</div>", unsafe_allow_html=True
             )
 
@@ -253,7 +262,7 @@ elif st.session_state['page'] == 4:
             st.markdown(
                 f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
                 f"<strong style='font-size:20px; color:#6A1B9A;'>Lucro(Max)</strong><br>"
-                f"<span style='font-size:22px;'>{lucro_max}</span>"
+                f"<span style='font-size:22px;'><strong>{lucro_max}</span>"
                 "</div>", unsafe_allow_html=True
             )
 
@@ -261,7 +270,7 @@ elif st.session_state['page'] == 4:
             st.markdown(
                 f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
                 f"<strong style='font-size:20px; color:#6A1B9A;'>FAT(Hora)</strong><br>"
-                f"<span style='font-size:24px;'>{fat_hora}</span>"
+                f"<span style='font-size:24px;'><strong>{fat_hora}</span>"
                 "</div>", unsafe_allow_html=True
             )
 
@@ -270,7 +279,7 @@ elif st.session_state['page'] == 4:
             st.markdown(
                 f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
                 f"<strong style='font-size:20px; color:#6A1B9A;'>MOD(Hora)</strong><br>"
-                f"<span style='font-size:24px;'>{mod_hora}</span>"
+                f"<span style='font-size:24px;'><strong>{mod_hora}</span>"
                 "</div>", unsafe_allow_html=True
             )
 
@@ -278,6 +287,6 @@ elif st.session_state['page'] == 4:
             st.markdown(
                 f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
                 f"<strong style='font-size:20px; color:#6A1B9A;'>Lucro(Hora)</strong><br>"
-                f"<span style='font-size:24px;'>{lucro_hora}</span>"
+                f"<span style='font-size:24px;'><strong>{lucro_hora}</span>"
                 "</div>", unsafe_allow_html=True
             )
