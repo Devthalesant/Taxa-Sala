@@ -215,7 +215,7 @@ elif st.session_state['page'] == 4:
         with col4:
             st.markdown(
                 f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
-                f"<strong style='font-size:20px; color:#6A1B9A;'>FAT(Pe)</strong><br>"
+                f"<strong style='font-size:20px; color:#6A1B9A;'>Faturamento(Pe)</strong><br>"
                 f"<span style='font-size:24px;'><strong>{fat_pe}</span>"
                 "</div>", unsafe_allow_html=True
             )
@@ -226,7 +226,7 @@ elif st.session_state['page'] == 4:
         with col5:
             st.markdown(
                 f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
-                f"<strong style='font-size:20px; color:#6A1B9A;'>MOD(Pe)</strong><br>"
+                f"<strong style='font-size:20px; color:#6A1B9A;'>Mão de Obra(Pe)</strong><br>"
                 f"<span style='font-size:24px;'><strong>{mod_pe}</span>"
                 "</div>", unsafe_allow_html=True
             )
@@ -242,7 +242,7 @@ elif st.session_state['page'] == 4:
         with col7:
             st.markdown(
                 f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
-                f"<strong style='font-size:20px; color:#6A1B9A;'>FAT(Max)</strong><br>"
+                f"<strong style='font-size:20px; color:#6A1B9A;'>Faturamento(Max)</strong><br>"
                 f"<span style='font-size:20px;'><strong>{fat_max}</span>"
                 "</div>", unsafe_allow_html=True
             )
@@ -269,7 +269,7 @@ elif st.session_state['page'] == 4:
         with col10:
             st.markdown(
                 f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
-                f"<strong style='font-size:20px; color:#6A1B9A;'>FAT(Hora)</strong><br>"
+                f"<strong style='font-size:20px; color:#6A1B9A;'>Faturamento(Hora)</strong><br>"
                 f"<span style='font-size:24px;'><strong>{fat_hora}</span>"
                 "</div>", unsafe_allow_html=True
             )
@@ -278,7 +278,7 @@ elif st.session_state['page'] == 4:
         with col11:
             st.markdown(
                 f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
-                f"<strong style='font-size:20px; color:#6A1B9A;'>MOD(Hora)</strong><br>"
+                f"<strong style='font-size:20px; color:#6A1B9A;'>Mão de Obra(Hora)</strong><br>"
                 f"<span style='font-size:24px;'><strong>{mod_hora}</span>"
                 "</div>", unsafe_allow_html=True
             )
