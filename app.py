@@ -19,7 +19,8 @@ if st.session_state['page'] == 1:
     # Inputs
     aluguel = st.number_input("Qual o valor do seu aluguel? (R$)", min_value=1, step=1, key='aluguel')
     funcionarios = st.number_input("Qual o gasto total com funcionarios? (R$)", min_value=1, step=1, key='funcionarios')
-    demais = st.number_input("Qual o valor total com demais gastos? (R$)", min_value=1, step=1, key='demais')
+    demais = st.number_input("Qual o valor total com demais Depesas Fixas? (R$)", min_value=1, step=1, key='demais')
+    funcionarios = funcionarios * 1.8  # Considerando 80% de encargos sociais
 
     total_despesas = aluguel + funcionarios + demais
 
@@ -50,9 +51,25 @@ elif st.session_state['page'] == 2:
     # Calcule quando tiver valores válidos
     if dias_uteis > 0 and horas_dia > 0 and salas > 0:
         taxa_sala = total_despesas / dias_uteis / horas_dia / salas
+        Custo_dia = total_despesas / dias_uteis
+        custo_hora = Custo_dia / horas_dia
         st.session_state['taxa_sala'] = taxa_sala
 
         # Exibir o resultado
+        st.markdown(
+            "<h2 style='font-size:30px; color:purple;'>Custo dia: R$ {valor}</h2>".format(
+                valor=f"{Custo_dia:,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.')
+            ),
+            unsafe_allow_html=True
+        )
+
+        st.markdown(
+            "<h2 style='font-size:30px; color:purple;'>Custo Hora: R$ {valor}</h2>".format(
+                valor=f"{custo_hora:,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.')
+            ),
+            unsafe_allow_html=True
+        )
+
         st.markdown(
             "<h2 style='font-size:30px; color:purple;'>Taxa Sala: R$ {valor}</h2>".format(
                 valor=f"{taxa_sala:,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.')
