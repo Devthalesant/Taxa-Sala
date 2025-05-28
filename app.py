@@ -95,8 +95,17 @@ elif st.session_state['page'] == 2:
 
 elif st.session_state['page'] == 3:
     st.image("images/Icone Horizontal.png")
+
     st.markdown(
     '<h1 style="font-size:30px; color:purple; text-decoration:underline;">Taxa Sala</h1>',unsafe_allow_html=True)
+    st.markdown(
+            """
+            <div style='text-align:center;'>
+                <h2 style='color:purple;'>Agora, como fazemos para pagar essa Conta?</h2>
+            </div>
+            """, unsafe_allow_html=True
+     )
+    
     st.markdown('<h2 style="font-size:20px;color:purple; text-decoration:underline;">Outras Informações:</h2>', unsafe_allow_html=True)
 
     procedimnto = st.text_input("Qual o nome do Procedimento?")
@@ -168,14 +177,6 @@ elif st.session_state['page'] == 4:
 
     with st.container():
         # Linha 1 - cabeçalhos
-
-        st.markdown(
-            """
-            <div style='text-align:center;'>
-                <h2 style='color:#673AB7;'>Agora, como fazemos para pagar essa Conta?</h2>
-            </div>
-            """, unsafe_allow_html=True
-        )
 
         st.markdown(
             """
