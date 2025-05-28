@@ -1,6 +1,12 @@
 import streamlit as st
 
 # Verifica se o estado da página está definido; se não, inicia na página 1
+st.set_page_config(
+    page_title="Taxa Sala ",
+    layout="wide",
+    initial_sidebar_state="auto"
+)
+
 if 'page' not in st.session_state:
     st.session_state['page'] = 1
 
@@ -192,101 +198,105 @@ elif st.session_state['page'] == 4:
 
         with col1:
             st.markdown(
-                f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
-                f"<strong style='font-size:20px; color:#6A1B9A;'>Margem(R$)</strong><br>"
-                f"<span style='font-size:24px;'><strong>{margem_rs}</span>"
-                f"</div>", unsafe_allow_html=True
+            f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
+            f"<strong style='font-size:20px; color:#6A1B9A;'>Margem(R$)</strong><br>"
+            f"<span style='font-size:24px;'><strong>{margem_rs}</span>"
+            f"</div>", unsafe_allow_html=True
             )
 
         with col2:
             st.markdown(
-                f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
-                f"<strong style='font-size:20px; color:#6A1B9A;'>Margem(%)</strong><br>"
-                f"<span style='font-size:24px;'><strong>{margem_porcento}</span>"
-                "</div>", unsafe_allow_html=True
+            f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
+            f"<strong style='font-size:20px; color:#6A1B9A;'>Margem(%)</strong><br>"
+            f"<span style='font-size:24px;'><strong>{margem_porcento}</span>"
+            "</div>", unsafe_allow_html=True
             )
         with col3:
             st.markdown(
-                f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
-                f"<strong style='font-size:20px; color:#6A1B9A;'>Quantidade(Pe)</strong><br>"
-                f"<span style='font-size:24px;'><strong>{proced_pe}</span>"
-                f"</div>", unsafe_allow_html=True
+            f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
+            f"<strong style='font-size:20px; color:#6A1B9A;'>Quantidade(Pe)</strong><br>"
+            f"<span style='font-size:24px;'><strong>{proced_pe}</span>"
+            f"</div>", unsafe_allow_html=True
             )
         with col4:
             st.markdown(
-                f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
-                f"<strong style='font-size:20px; color:#6A1B9A;'>Faturamento(Pe)</strong><br>"
-                f"<span style='font-size:24px;'><strong>{fat_pe}</span>"
-                "</div>", unsafe_allow_html=True
+            f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
+            f"<strong style='font-size:20px; color:#6A1B9A;'>Faturamento(Pe)</strong><br>"
+            f"<span style='font-size:24px;'><strong>{fat_pe}</span>"
+            "</div>", unsafe_allow_html=True
             )
+
+        # Espaçamento entre linhas
+        st.markdown("<div style='height: 30px;'></div>", unsafe_allow_html=True)
 
         # Linha 3 - segunda linha de KPIs
         col5, col6, col7, col8 = st.columns(4)
-    
+        
         with col5:
             st.markdown(
-                f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
-                f"<strong style='font-size:20px; color:#6A1B9A;'>Mão de Obra(Pe)</strong><br>"
-                f"<span style='font-size:24px;'><strong>{mod_pe}</span>"
-                "</div>", unsafe_allow_html=True
+            f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
+            f"<strong style='font-size:20px; color:#6A1B9A;'>Mão de Obra(Pe)</strong><br>"
+            f"<span style='font-size:24px;'><strong>{mod_pe}</span>"
+            "</div>", unsafe_allow_html=True
             )
 
         with col6:
             st.markdown(
-                f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
-                f"<strong style='font-size:20px; color:#6A1B9A;'>Ocupação(%)</strong><br>"
-                f"<span style='font-size:24px;'><strong>{ocupacao_pe}</span>"
-                "</div>", unsafe_allow_html=True
+            f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
+            f"<strong style='font-size:20px; color:#6A1B9A;'>Ocupação(%)</strong><br>"
+            f"<span style='font-size:24px;'><strong>{ocupacao_pe}</span>"
+            "</div>", unsafe_allow_html=True
             )
 
         with col7:
             st.markdown(
-                f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
-                f"<strong style='font-size:20px; color:#6A1B9A;'>Faturamento(Max)</strong><br>"
-                f"<span style='font-size:20px;'><strong>{fat_max}</span>"
-                "</div>", unsafe_allow_html=True
+            f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
+            f"<strong style='font-size:20px; color:#6A1B9A;'>Faturamento(Max)</strong><br>"
+            f"<span style='font-size:20px;'><strong>{fat_max}</span>"
+            "</div>", unsafe_allow_html=True
             )
 
         with col8:
             st.markdown(
-                f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
-                f"<strong style='font-size:20px; color:#6A1B9A;'>Quantidade(Max)</strong><br>"
-                f"<span style='font-size:24px;'><strong>{num_prced_max}</span>"
-                "</div>", unsafe_allow_html=True
+            f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
+            f"<strong style='font-size:20px; color:#6A1B9A;'>Quantidade(Max)</strong><br>"
+            f"<span style='font-size:24px;'><strong>{num_prced_max}</span>"
+            "</div>", unsafe_allow_html=True
             )
 
+        # Espaçamento entre linhas
+        st.markdown("<div style='height: 30px;'></div>", unsafe_allow_html=True)
         
         col9, col10, col11, col12 = st.columns(4)
 
         with col9:
             st.markdown(
-                f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
-                f"<strong style='font-size:20px; color:#6A1B9A;'>Lucro(Max)</strong><br>"
-                f"<span style='font-size:22px;'><strong>{lucro_max}</span>"
-                "</div>", unsafe_allow_html=True
+            f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
+            f"<strong style='font-size:20px; color:#6A1B9A;'>Lucro(Max)</strong><br>"
+            f"<span style='font-size:22px;'><strong>{lucro_max}</span>"
+            "</div>", unsafe_allow_html=True
             )
 
         with col10:
             st.markdown(
-                f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
-                f"<strong style='font-size:20px; color:#6A1B9A;'>Faturamento(Hora)</strong><br>"
-                f"<span style='font-size:24px;'><strong>{fat_hora}</span>"
-                "</div>", unsafe_allow_html=True
+            f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
+            f"<strong style='font-size:20px; color:#6A1B9A;'>Faturamento(Hora)</strong><br>"
+            f"<span style='font-size:24px;'><strong>{fat_hora}</span>"
+            "</div>", unsafe_allow_html=True
             )
-
 
         with col11:
             st.markdown(
-                f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
-                f"<strong style='font-size:20px; color:#6A1B9A;'>Mão de Obra(Hora)</strong><br>"
-                f"<span style='font-size:24px;'><strong>{mod_hora}</span>"
-                "</div>", unsafe_allow_html=True
+            f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
+            f"<strong style='font-size:20px; color:#6A1B9A;'>Mão de Obra(Hora)</strong><br>"
+            f"<span style='font-size:24px;'><strong>{mod_hora}</span>"
+            "</div>", unsafe_allow_html=True
             )
 
         with col12:
             st.markdown(
-                f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
-                f"<strong style='font-size:20px; color:#6A1B9A;'>Lucro(Hora)</strong><br>"
-                f"<span style='font-size:24px;'><strong>{lucro_hora}</span>"
-                "</div>", unsafe_allow_html=True
+            f"<div style='background-color:#B39DDB; padding:15px; border-radius:10px; text-align:center;'>"
+            f"<strong style='font-size:20px; color:#6A1B9A;'>Lucro(Hora)</strong><br>"
+            f"<span style='font-size:24px;'><strong>{lucro_hora}</span>"
+            "</div>", unsafe_allow_html=True
             )
