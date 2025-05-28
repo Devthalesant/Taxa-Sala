@@ -14,18 +14,18 @@ if st.session_state['page'] == 1:
     st.image("images/Logo-Imersão-horizontal-fundoclaro-png.png", use_container_width=True)
     st.markdown('<h1 style="font-size:30px; color:purple; text-decoration:underline;">Taxa Sala</h1>', unsafe_allow_html=True)
     st.markdown('<h3 style="font-size:20px;">A seguir, faremos algumas perguntas para definir a Taxa Sala da sua clínica.</h3>', unsafe_allow_html=True)
-    st.markdown('<h2 style="font-size:20px; color:purple; text-decoration:underline;">Custos Fixos:</h2>', unsafe_allow_html=True)
+    st.markdown('<h2 style="font-size:20px; color:purple; text-decoration:underline;">Despesas Fixas:</h2>', unsafe_allow_html=True)
 
     # Inputs
     aluguel = st.number_input("Qual o valor do seu aluguel? (R$)", min_value=1, step=1, key='aluguel')
-    funcionarios = st.number_input("Qual o gasto total com funcionários? (R$)", min_value=1, step=1, key='funcionarios')
+    funcionarios = st.number_input("Qual o gasto total com salário de funcionários? (R$)", min_value=1, step=1, key='funcionarios')
     demais = st.number_input("Qual o valor total com demais Depesas Fixas? (R$)", min_value=1, step=1, key='demais')
     funcionarios = funcionarios * 1.8  # Considerando 80% de encargos sociais
 
     total_despesas = aluguel + funcionarios + demais
 
     st.markdown(
-        "<h2 style='font-size:30px; color:purple;'>Custo Fixo: R$ {valor}</h2>".format(
+        "<h2 style='font-size:30px; color:purple;'>Despesa fixa: R$ {valor}</h2>".format(
             valor=f"{total_despesas:,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.')
 
         ),
